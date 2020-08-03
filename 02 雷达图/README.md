@@ -30,4 +30,4 @@ mtcars_radar
 ``` r
 ggradar(mtcars_radar)
 ```
-![雷达图](https://github.com/yuan1615/R-Visualization/blob/master/01%20雷达图/雷达图.png)
+![雷达图](https://github.com/yuan1615/R-Visualization/blob/master/02%20雷达图/雷达图.png)
