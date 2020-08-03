@@ -1,0 +1,30 @@
+---
+title: "雷达图"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 加载包及数据
+
+```{r cars, echo=TRUE, warning=FALSE,message=FALSE}
+library(ggradar)
+library(dplyr)
+library(scales)
+library(tibble)
+
+mtcars_radar <- mtcars %>% 
+  as_tibble(rownames = "group") %>% 
+  mutate_at(vars(-group), rescale) %>% 
+  tail(4) %>% 
+  select(1:8)
+mtcars_radar
+
+```
+
+## 绘图
+```{r pressure, echo=TRUE}
+ggradar(mtcars_radar)
+```
