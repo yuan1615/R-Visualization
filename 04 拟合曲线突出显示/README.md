@@ -17,7 +17,7 @@ ggplot(lynx, as.numeric = FALSE) + geom_line() +
   expand_limits(y = 8000)
 ```
 
-![](ggpmisc-example_files/figure-gfm/stat_peaks-1.png)<!-- -->
+![plot1](https://github.com/yuan1615/R-Visualization/tree/master/04%20%E6%8B%9F%E5%90%88%E6%9B%B2%E7%BA%BF%E7%AA%81%E5%87%BA%E6%98%BE%E7%A4%BA/ggpmisc-example_files/figure-gfm/stat_peaks-1.png)
 
 ## 例2：利用stat\_poly\_eq将拟合公式标注到图中
 
@@ -31,7 +31,7 @@ ggplot(cars, aes(speed, dist)) +
                formula = formula, parse = TRUE)
 ```
 
-![](ggpmisc-example_files/figure-gfm/stat_poly_eq-1.png)<!-- -->
+![plot2](https://github.com/yuan1615/R-Visualization/tree/master/04%20%E6%8B%9F%E5%90%88%E6%9B%B2%E7%BA%BF%E7%AA%81%E5%87%BA%E6%98%BE%E7%A4%BA/ggpmisc-example_files/figure-gfm/stat_poly_eq-1.png)
 
 ## 例3：利用stat\_fit\_tb()将表格放到图中
 
@@ -53,7 +53,7 @@ ggplot(cars, aes(speed, dist)) +
               parse = TRUE)
 ```
 
-![](ggpmisc-example_files/figure-gfm/stat_fit_tb-1.png)<!-- -->
+![plot3](https://github.com/yuan1615/R-Visualization/tree/master/04%20%E6%8B%9F%E5%90%88%E6%9B%B2%E7%BA%BF%E7%AA%81%E5%87%BA%E6%98%BE%E7%A4%BA/ggpmisc-example_files/figure-gfm/stat_fit_tb-1.png)
 
 ## 例4：在图中加入子图
 
@@ -70,8 +70,8 @@ ggplot(mtcars, aes(wt, mpg, colour = factor(cyl))) +
                 vjust = 0, hjust = 0) +
   expand_limits(y = 0, x = 0)
 ```
+![plot4](https://github.com/yuan1615/R-Visualization/tree/master/04%20%E6%8B%9F%E5%90%88%E6%9B%B2%E7%BA%BF%E7%AA%81%E5%87%BA%E6%98%BE%E7%A4%BA/ggpmisc-example_files/figure-gfm/geom_plot_npc-1.png)
 
-![](ggpmisc-example_files/figure-gfm/geom_plot_npc-1.png)<!-- -->
 
 ## 例5：数据放到坐标系中标出离群点
 
@@ -87,4 +87,4 @@ ggplot(quadrant_example.df, aes(logFC.x, logFC.y)) +
   scale_y_logFC(name = "Transcript abundance after B%unit")
 ```
 
-![](ggpmisc-example_files/figure-gfm/geom_quadrant-1.png)<!-- -->
+![plot5](https://github.com/yuan1615/R-Visualization/tree/master/04%20%E6%8B%9F%E5%90%88%E6%9B%B2%E7%BA%BF%E7%AA%81%E5%87%BA%E6%98%BE%E7%A4%BA/ggpmisc-example_files/figure-gfm/geom_quadrant-1.png)
