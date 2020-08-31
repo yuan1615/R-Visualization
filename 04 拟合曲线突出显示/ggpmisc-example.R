@@ -36,6 +36,10 @@ ggplot(cars, aes(speed, dist)) +
               label.y.npc = "top", label.x.npc = "left",
               size = 5,
               parse = TRUE)
+
+
+
+
 # 
 library(tibble)
 p <- ggplot(mtcars, aes(factor(cyl), mpg, colour = factor(cyl))) +
@@ -60,3 +64,26 @@ ggplot(quadrant_example.df, aes(logFC.x, logFC.y)) +
                      geom = "text_repel", size = 2, colour = "red") +
   scale_x_logFC(name = "Transcript abundance after A%unit") +
   scale_y_logFC(name = "Transcript abundance after B%unit")
+
+## 综合
+formula <- y ~ x + I(x^2)
+ggplot(cars, aes(speed, dist)) +
+  geom_point() +
+  stat_fit_deviations(method = "lm", formula = formula, colour = "red") +
+  geom_smooth(method = "lm", formula = formula) +
+  stat_poly_eq(aes(label =  paste(stat(eq.label), stat(adj.rr.label), sep = "*\", \"*")),
+               formula = formula, parse = TRUE) +
+  stat_fit_tb(method = "lm",
+              method.args = list(formula = formula),
+              tb.type = "fit.anova",
+              tb.vars = c(Effect = "term",
+                          "df",
+                          "M.S." = "meansq",
+                          "italic(F)" = "statistic",
+                          "italic(P)" = "p.value"),
+              label.y.npc = 0.8, label.x.npc = 0.05,
+              size = 3,
+              parse = TRUE)
+
+
+
